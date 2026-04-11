@@ -6,10 +6,10 @@ public class ParcialRegistroNotas {
 
         // Solicitar cantidad de estudiantes
         System.out.print("Ingrese la cantidad de estudiantes: ");
-        int n = entrada.nextInt();
+        int numeroEstudiantes = entrada.nextInt();
 
         // Crear arreglo
-        double[] notas = new double[n];
+        double[] notas = new double[numeroEstudiantes];
 
         // Variables para cálculos
         double suma = 0;
@@ -19,7 +19,7 @@ public class ParcialRegistroNotas {
         int reprobados = 0;
 
         // Ingresar notas
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < numeroEstudiantes; i++) {
             System.out.print("Ingrese la nota del estudiante " + (i + 1) + ": ");
             notas[i] = entrada.nextDouble();
 
@@ -48,12 +48,13 @@ public class ParcialRegistroNotas {
         }
 
         // Calcular promedio
-        double promedio = suma / n;
+        double promedio = suma / numeroEstudiantes;
 
         // Mostrar notas
         System.out.println("\n===== NOTAS INGRESADAS =====");
-        for (int i = 0; i < n; i++) {
-            System.out.println("Estudiante " + (i + 1) + ": " + notas[i]);
+        for (int i = 0; i < numeroEstudiantes; i++) {
+            String estado = notas[i] >= 3.0 ? "Aprobado" : "Reprobado";
+            System.out.println("Estudiante " + (i + 1) + ": " + notas[i] + " - " + estado);
         }
 
         // Mostrar resumen
